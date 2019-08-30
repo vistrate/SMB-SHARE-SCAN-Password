@@ -27,7 +27,7 @@ Ressort pour contenu du fichier:
 	- si possible vérifier s'il y a un mot de passe de présent
 	sur certains fichiers
   
-  usage: main.exe [-h] [-u [USER]] [-p [PASSWORD]] [-ip [IP [IP ...]]] [-f [F]]
+Arguments: main.exe [-h] [-u [USER]] [-p [PASSWORD]] [-ip [IP [IP ...]]] [-f [F]]
                 [-v] [-c] [-regexfilename [REGEXFILENAME [REGEXFILENAME ...]]]
                 [-regexoffice] [-regextxt]
                 [-regexcontent [REGEXCONTENT [REGEXCONTENT ...]]]
@@ -54,16 +54,16 @@ optional arguments:
                         des plages d'ip, des subnets et des hostnames peuvent
                         être mis dedans dans la première colonne. Puis la
                         seconde colonne contient le login, et la troisième
-                        colonne le mot de passe associée. Le fichier doit être
+                        colonne le mot de passe associé. Le fichier doit être
                         au format csv avec un ; comme séparateur. Exemple : -f
-                        'toto.csv' Format d'un fichier en entrée contenant les
-                        hôtes et login/mot de passe : ************************
-                        ******************************* * Liste des
-                        IP/Hostnames/Networks * Login/Mot de passe* **********
-                        *********************************************
-                        10.10.0.1 * toto / admin  john
-                        / smith 10.0.0.0/24 * toto / admin 192.168.0.1-55 *
-                        titi / 12345 ..............
+                        'toto.csv' 
+						
+			Format d'un fichier en entrée contenant les hôtes et login/mot de passe : 
+			** Liste des IP/Hostnames/Networks * Login/Mot de passe* *******
+                        10.10.0.1 * toto / admin *
+			10.0.0.0/24 * toto / admin 
+			192.168.0.1-55 * titi / 12345
+						
   -v, --verbose         Permet de suivre l'avancement du scan
   -c, --scancontent     Scanne aussi le contenu du fichier à la recherche de
                         motif
@@ -81,7 +81,13 @@ optional arguments:
                         Chemin du fichier de sortie
   -searchlastwriter     Indique si le scan recherche aussi le dernier
                         utilisateur a avoir écrit dans le fichier
-  -ntlmv1               Indique si ntlm version 1 doit être utilisée
+  -ntlmv1               Indique si ntlm version 1 doit être utilisé
+  -portsmb [{139,445}]  Indique le numéro de port SMB (139 ou 445)
+  -domainname [DOMAINNAME]
+                        Indique le nom de domaine a utiliser.
+  -clientmachinename [CLIENTMACHINENAME]
+                        Indique le nom de machine cliente
+
   -portsmb [{139,445}]  Indique le numéro de port SMB (139 ou 445)
   -domainname [DOMAINNAME]
                         Indique le nom de domaine a utiliser.
